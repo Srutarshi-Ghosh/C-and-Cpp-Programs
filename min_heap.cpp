@@ -14,6 +14,7 @@ int deleteMin(heap*);
 int deleteIndex(heap*, int);
 void printHeap(heap*);
 void swap(int*, int*);
+void heapify(heap*);
 
 int main(){
 	int elem, ind, ch, flag = 1;
@@ -21,6 +22,16 @@ int main(){
 	h->capacity = CAP;
 	h->arr = (int*)malloc(sizeof(int)*CAP);
 	h->size = 0;
+	
+	for(h->size = 0; h->size < 5; h->size++){
+		//scanf("%d", &h->arr[h->size]);
+		h->arr[h->size] = 5 - h->size;
+		
+	}
+	printHeap(h);
+	heapify(h);
+	printHeap(h); 
+	
 	
 	printf("1. Insert\n2. Delte Index\n3. Delete Minimum\n4. Print Heap\n5. Exit\n");
 	
@@ -132,5 +143,52 @@ void swap(int* a, int* b){
 	*a = *b;
 	*b = temp;
 }
+
+
+//void heapify(heap *h, int ind){
+//	int smallest = ind;
+//	int parent = (ind-1)/2;
+//	
+//	if(parent < h->size && h->arr[smallest] < h->arr[parent])
+//		smallest = parent;
+//
+//	if(smallest != ind){
+//		swap(&h->arr[smallest], &h->arr[ind]);
+//		heapify(h, parent);
+//	}
+//}
+
+void heapify(heap *h){
+	int sm, l, r, i, k;
+	
+	for(i = h->size-1; i >= 0; i--){
+		k = i;
+		do{
+			l = (2 * k) + 1;
+			if(l < h->size)
+				sm = l;
+			else
+				break;
+			
+			r = l + 1;
+			if(r < h->size && h->arr[r] < h->arr[l]){
+				sm = r;
+			}
+			
+			if(h->arr[sm] < h->arr[k]){
+				swap(&h->arr[k], &h->arr[sm]);
+				printf("%d\n", sm);	
+				k = sm;		
+			}
+			else
+				break;
+			//printf("%d ", i);
+			
+		}while(k < h->size);
+		//printHeap(h);
+	}
+}
+
+
 
 

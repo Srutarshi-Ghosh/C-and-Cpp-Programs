@@ -144,7 +144,7 @@ node* search(node *root, int item){
 node* minValueNode(node* root){
 	node *curr = root;
 	while(curr && curr->left)
-		curr = curr->right;
+		curr = curr->left;
 	
 	return curr;
 }
