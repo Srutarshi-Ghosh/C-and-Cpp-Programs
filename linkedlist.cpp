@@ -29,61 +29,61 @@ int main(){
 		scanf("%d", &ch);
 		switch(ch){
 			case 1: printf("Enter Element to Insert at Begin: ");
-					scanf("%d", &elem);
-					insertAtBegin(&head, elem);
-					break;
+				scanf("%d", &elem);
+				insertAtBegin(&head, elem);
+				break;
 					
 			case 2: printf("Enter Element to Insert at End: ");
-					scanf("%d", &elem);
-					insertAtEnd(&head, elem);
-					break;
+				scanf("%d", &elem);
+				insertAtEnd(&head, elem);
+				break;
 					
 			case 3: printf("Enter Element to Insert at Position: ");
-					scanf("%d", &elem);
-					printf("Enter Position: ");
-					scanf("%d", &pos);
-					insertAtPosition(&head, pos, elem);
-					break;
+				scanf("%d", &elem);
+				printf("Enter Position: ");
+				scanf("%d", &pos);
+				insertAtPosition(&head, pos, elem);
+				break;
 					
 			case 4: elem = deleteFromBegin(&head);
-					if(elem != -99999)
-						printf("The Deleted Element is %d\n", elem);
-					break;
+				if(elem != -99999)
+					printf("The Deleted Element is %d\n", elem);
+				break;
 						
 			case 5: elem = deleteFromEnd(&head);
-					if(elem != -99999)
-						printf("The Deleted Element is %d\n", elem);
-					break;
+				if(elem != -99999)
+					printf("The Deleted Element is %d\n", elem);
+				break;
 						
 			case 6: printf("Enter Position to Delete from: ");
-					scanf("%d", &pos);
-					elem = deleteFromPosition(&head, pos);
-					if(elem != -99999)
-						printf("The Deleted Element is %d\n", elem);
-					break;
+				scanf("%d", &pos);
+				elem = deleteFromPosition(&head, pos);
+				if(elem != -99999)
+					printf("The Deleted Element is %d\n", elem);
+				break;
 						
 			case 7: printf("Enter Element to search: ");
-					scanf("%d", &elem);
-					pos = searchlist(head, elem);
-					if(pos == -1)
-						printf("Element not present in the List!!\n");
-					else
-						printf("The position of the element is %d\n", pos);
-					break;
+				scanf("%d", &elem);
+				pos = searchlist(head, elem);
+				if(pos == -1)
+					printf("Element not present in the List!!\n");
+				else
+					printf("The position of the element is %d\n", pos);
+				break;
 						
 			case 8: printf("The Length of the List is %d\n", listlen(head));
-					break;
+				break;
 			
 			case 9: printf("The List is: ");
-					printlist(head);
-					break;
+				printlist(head);
+				break;
 			
 			case 10: reverselist(&head);
-					 printf("The List has been Reversed!\n");
-					 break;
+				 printf("The List has been Reversed!\n");
+				 break;
 			
 			case 11: flag = 0;
-					 break;
+				 break;
 					 
 			default: printf("Invalid Input!!\n");
 		}
