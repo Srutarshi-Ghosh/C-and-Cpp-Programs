@@ -33,9 +33,9 @@ void merge(int arr[], int l, int m, int r){
 	int n2 = r - m;
 	int left[n1], right[n2];
 	for (i = 0; i < n1; i++) 
-        left[i] = arr[l + i]; 
-    for (j = 0; j < n2; j++) 
-        right[j] = arr[m + j + 1]; 
+        	left[i] = arr[l + i]; 
+	for (j = 0; j < n2; j++) 
+        	right[j] = arr[m + j + 1]; 
 	i=0;
 	j=0; 
 	k=l;
@@ -66,7 +66,7 @@ void merge(int arr[], int l, int m, int r){
 
 void mergesort(int arr[], int l, int r){
 	if(l<r){
-		int m=(l+r)/2;
+	        int m=(l+r)/2;
 		mergesort(arr, l, m);
 		mergesort(arr, m+1, r);
 		merge(arr, l, m, r);
